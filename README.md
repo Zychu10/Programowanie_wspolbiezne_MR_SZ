@@ -1,0 +1,2 @@
+# Programowanie_wspolbiezne_MR_SZ
+Programowanie wspolbiezne 
