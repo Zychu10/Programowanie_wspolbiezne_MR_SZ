@@ -1,16 +1,21 @@
-﻿namespace Data
-{
-    public class Ball
-    {
-        public int Radius { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
+﻿
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
 
-        public Ball(int r, int x, int y)
+    namespace Data
+    {
+        public abstract class DataAbstractApi
         {
-            Radius = r;
-            X = x;
-            Y = y;
+            public static DataAbstractApi CreateBallData()
+            {
+                return new BallData();
+            }
+
         }
+        internal class BallData : DataAbstractApi
+        {
+            
+        }
+
     }
-}

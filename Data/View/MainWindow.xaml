@@ -1,12 +1,44 @@
-﻿<Window x:Class="View.MainWindow"
+﻿<mah:MetroWindow x:Class="Interface.WpfApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:View"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:Interface.WpfApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="600" Width="800">
+    <mah:MetroWindow.Resources>
 
+        <Style TargetType="TextBox" BasedOn="{StaticResource
+            {x:Type TextBox}}">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Margin" Value="6"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Button" BasedOn="{StaticResource
+            {x:Type Button}}">
+            <Setter Property="FontSize" Value="26"/>
+            <Setter Property="Margin" Value="6"/>
+        </Style>
+
+    </mah:MetroWindow.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Grid.Column="0" Content="Start"/>
+        <Button Grid.Row="0" Grid.Column="1" Content="Stop"/>
+        <Button Grid.Row="0" Grid.Column="2" Content="Reset"/>
+        <Border BorderBrush="Black" BorderThickness="6" Grid.ColumnSpan="3" HorizontalAlignment="Center" Height="400" Margin="0,0,0,0" Grid.RowSpan="4" Grid.Row="1" VerticalAlignment="Center" Width="692"/>
     </Grid>
-</Window>
+</mah:MetroWindow>
