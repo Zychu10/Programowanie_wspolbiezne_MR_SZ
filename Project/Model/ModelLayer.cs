@@ -9,27 +9,48 @@ using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
-
-
+using System.Reactive.Linq;
 
 namespace Model
 {
     public class ModelLayer
     {
-        public int numberOfBalls { get; set; }
-        public bool isPaused { get; set; }
-        public bool isReadyToBegin { get; set; }
-        public Canvas Canvas { get; set; }
+        public readonly Observable<IEnumerable<BallModel>> Observable = new();
+        private readonly LogicAPI _collisionLogic = default;
+        public IEnumerable<BallModel> BallModels;
+        public readonly int Radius = 15;
+        public readonly int Width = 500;
+        public readonly int Height = 500;
+        public readonly int Mass = 1;
+        private object _frameDrop = new();
 
-        private Canvas canvas;
-        public ModelLayer(int width, int height, LogicAPI api = null)
+        public ModelLayer(LogicAPI collisionLogic = null)
         {
-            logicAPI = api ?? LogicAPI.CreateLayer(width, height);
-            ellipses = new List<Ellipse>();
-            Canvas = new Canvas();
-            Canvas.Width = 350;
-            Canvas.Height = 600;
-            Canvas.Background = null;
+            _collisionLogic = collisionLogic ?? LogicAPI.CreateCollisionLogic();
+            _collisionLogic.Observable.Add(Update);
+        }
+
+        public void GiveBalls(int ballsCount)
+        {
+            _collisionLogic.StopSimulation();
+            _collisionLogic.AddBalls(ballsCount, Radius, Mass);
+            _collisionLogic.StartSimulation();
+        }
+
+        public void Update(WorldState state)
+        {
+            if (Monitor.TryEnter(_frameDrop))
+            {
+                try
+                {
+                    BallModels = state.Balls.Select(ball => new BallModel(ball));
+                    Observable.Notify(BallModels);
+                }
+                finally
+                {
+                    Monitor.Exit(_frameDrop);
+                }
+            }
         }
     }
 }

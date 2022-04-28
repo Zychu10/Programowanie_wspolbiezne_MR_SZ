@@ -1,57 +1,47 @@
-﻿using System.Windows.Controls;
+﻿using Model;
+using System.Collections.ObjectModel;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
-using Model;
+
 
 namespace ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
-        //private readonly ModelLayer modelLayer = ModelLayer.CreateApi();
-        public bool isReadyToBegin { get => MyModel.isReadyToBegin; set { MyModel.isReadyToBegin = value; RaisePropertyChanged(); } }
-        public bool isPaused { get => MyModel.isPaused; set { MyModel.isPaused = value; RaisePropertyChanged(); } }
-        public string boxContent;
-        public Canvas Canvas { get => MyModel.Canvas; set { MyModel.Canvas = value; RaisePropertyChanged(); } }
-        public int numberOfBalls { get => MyModel.numberOfBalls; set => MyModel.numberOfBalls = value; }
-        private ModelLayer MyModel { get; set; }
+        private ModelLayer CollisionModel { get; set; }
+        public ObservableCollection<BallModel> Balls { get; set; }
+        public int Width { get; }
+        public int Height { get; }
+        public int BallsCount { get; set; } = 10;
+        public ICommand AddBallsCommand { get; set; }
 
-
-
-        public MainViewModel()
+        public MainViewModel() : this(default)
         {
-            MyModel = new ModelLayer(350,600);
-            AddBalls = new RelayCommand(MyModel.CreateBalls);
-            BeginSimulation = new RelayCommand(Start);
-            PauseSimulation = new RelayCommand(Stop);
-            isReadyToBegin = true;
-            isPaused = false;
         }
-        public RelayCommand AddBalls { get; set; }
-        public ICommand BeginSimulation { get; set; }
-        public ICommand PauseSimulation { get; set; }
-        public void Start()
+        public MainViewModel(ModelLayer collisionModel = default)
         {
-            MyModel.Start();
-            isPaused = false;
-            isReadyToBegin = true;
-        }
-        public void Stop()
-        {
-            MyModel.Stop();
-            isPaused = true;
-            isReadyToBegin = true;
+            CollisionModel = collisionModel ?? new ModelLayer();
+            //Balls = new ObservableCollection<BallModel>();
+            //Balls.CollectionChanged += CollectionChangedHandler;
+            AddBallsCommand = new RelayCommand(() => RequestBall());
+            Balls = new ObservableCollection<BallModel>();
+            CollisionModel.Observable.Add(Framer);
+            Width = CollisionModel.Width;
+            Height = CollisionModel.Height;
         }
 
-        private void CreateBalls()
+        private void RequestBall()
         {
-            MyModel.CreateBalls();
-            isReadyToBegin = true;
-
+            CollisionModel.GiveBalls(BallsCount);
         }
-        public void SetCanvas(Canvas canvas)
+
+        private void Framer(IEnumerable<BallModel> ballModels)
         {
-            MyModel.Canvas = canvas;
+            Balls = new ObservableCollection<BallModel>(ballModels);
+            RaisePropertyChanged(nameof(Balls));
         }
 
     }
+
 }
