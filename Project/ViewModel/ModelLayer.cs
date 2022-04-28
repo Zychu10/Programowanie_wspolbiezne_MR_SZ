@@ -1,7 +1,6 @@
 ﻿namespace ViewModel
 {
-    public class Class1
+    internal class ModelLayer
     {
-
     }
 }
