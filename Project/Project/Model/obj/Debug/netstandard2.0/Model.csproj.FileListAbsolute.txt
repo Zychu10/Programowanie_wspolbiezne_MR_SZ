@@ -28,3 +28,33 @@ C:\Users\Maciek\Desktop\Studia\semestr 4\wspolbiezne\repo\Programowanie_wspolbie
 C:\Users\Maciek\Desktop\Studia\semestr 4\wspolbiezne\repo\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\Logic.pdb
 C:\Users\Maciek\Desktop\Studia\semestr 4\wspolbiezne\repo\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\Data.pdb
 C:\Users\Maciek\Desktop\Studia\semestr 4\wspolbiezne\repo\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\obj\Debug\netstandard2.0\Model.csproj.CopyComplete
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\obj\Debug\netstandard2.0\Model.csproj.AssemblyReference.cache
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\obj\Debug\netstandard2.0\Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\obj\Debug\netstandard2.0\Model.AssemblyInfoInputs.cache
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\obj\Debug\netstandard2.0\Model.AssemblyInfo.cs
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\obj\Debug\netstandard2.0\Model.csproj.CoreCompileInputs.cache
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\obj\Debug\netstandard2.0\Model.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\obj\Debug\netstandard2.0\Model.pdb
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\Model.deps.json
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\Model.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\Model.pdb
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\Data.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\Logic.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\PresentationCore.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\PresentationFramework.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\WindowsBase.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\System.Xaml.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\UIAutomationTypes.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\System.Windows.Input.Manipulations.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\UIAutomationProvider.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\System.Deployment.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\ReachFramework.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\System.Printing.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\Accessibility.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\System.Windows.Forms.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\System.Runtime.Serialization.Formatters.Soap.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\Logic.pdb
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\bin\Debug\netstandard2.0\Data.pdb
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Model\obj\Debug\netstandard2.0\Model.csproj.CopyComplete

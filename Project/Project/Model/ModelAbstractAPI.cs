@@ -45,12 +45,9 @@ namespace Model
             Canvas.Margin = new Thickness(0, 134, 0, 0);
             Canvas.Width = width;
             Canvas.Height = height;
-<<<<<<< HEAD
             Canvas.Background = new SolidColorBrush(Color.FromRgb(245, 250, 205));
-=======
             Canvas.Margin = new Thickness(0, 134, 0, 0);
             Canvas.Background = new SolidColorBrush(Color.FromRgb(245, 250, 245));
->>>>>>> ab571a18d7a7fbadca7956999d5790e4e4ca6627
             LogicLayer.Update += (sender, args) => Move();
         }
         public override void CreateEllipses(int ballVal)

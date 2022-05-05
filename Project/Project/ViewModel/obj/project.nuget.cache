@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Luj8PxtKwwwO9Ag5KWQnRe2/tX/pgCPkq/WaW/CXv8hHZV/upSogikT6sMnhe+xe4dppmBtlIqG1ZAaWkSJTmQ==",
+  "dgSpecHash": "vClQw0Mqzn1+6lPplu0/9V6TLfogYvR6imaF+C4NulxoELLNa4tVFcUAEgzB1KU2OzFpb6gWf3zqbWieUq5SLg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Maciek\\Desktop\\Studia\\semestr 4\\wspolbiezne\\repo\\Programowanie_wspolbiezne_MR_SZ\\Project\\Project\\ViewModel\\ViewModel.csproj",
+  "projectFilePath": "C:\\Users\\Sebastian\\Desktop\\studia\\programowanie_wspolbiezne\\Programowanie_wspolbiezne_MR_SZ\\Project\\Project\\ViewModel\\ViewModel.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Maciek\\.nuget\\packages\\extended.wpf.toolkit\\4.3.0\\extended.wpf.toolkit.4.3.0.nupkg.sha512",
-    "C:\\Users\\Maciek\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Maciek\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\Sebastian\\.nuget\\packages\\extended.wpf.toolkit\\4.3.0\\extended.wpf.toolkit.4.3.0.nupkg.sha512",
+    "C:\\Users\\Sebastian\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Sebastian\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": [
     {

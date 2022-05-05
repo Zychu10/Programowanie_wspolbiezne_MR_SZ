@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "WTGO1TRGphfq2d2z5jRfkPaicMUqNrdojuZG7W+PMcNjcyFsZg5rDojWik+iD5vy2hyUY60KGqj+6FysQqUW8w==",
+  "dgSpecHash": "LcVDsIy8pLEAgyBFxhosHue46NVnWWe0OCPL3PS/f+aSa2dD/J50CAwQjhlSyDiXHrjrmtE/NJde+OGzsMLtlg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Maciek\\Desktop\\Studia\\semestr 4\\wspolbiezne\\repo\\Programowanie_wspolbiezne_MR_SZ\\Project\\Project\\View\\View.csproj",
+  "projectFilePath": "C:\\Users\\Sebastian\\Desktop\\studia\\programowanie_wspolbiezne\\Programowanie_wspolbiezne_MR_SZ\\Project\\Project\\View\\View.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Maciek\\.nuget\\packages\\extended.wpf.toolkit\\4.3.0\\extended.wpf.toolkit.4.3.0.nupkg.sha512"
+    "C:\\Users\\Sebastian\\.nuget\\packages\\extended.wpf.toolkit\\4.3.0\\extended.wpf.toolkit.4.3.0.nupkg.sha512"
   ],
   "logs": [
     {

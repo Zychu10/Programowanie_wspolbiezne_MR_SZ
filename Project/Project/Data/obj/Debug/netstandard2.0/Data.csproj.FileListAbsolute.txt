@@ -8,3 +8,13 @@ C:\Users\Maciek\Desktop\Studia\semestr 4\wspolbiezne\repo\Programowanie_wspolbie
 C:\Users\Maciek\Desktop\Studia\semestr 4\wspolbiezne\repo\Programowanie_wspolbiezne_MR_SZ\Project\Project\Data\obj\Debug\netstandard2.0\Data.csproj.CoreCompileInputs.cache
 C:\Users\Maciek\Desktop\Studia\semestr 4\wspolbiezne\repo\Programowanie_wspolbiezne_MR_SZ\Project\Project\Data\obj\Debug\netstandard2.0\Data.dll
 C:\Users\Maciek\Desktop\Studia\semestr 4\wspolbiezne\repo\Programowanie_wspolbiezne_MR_SZ\Project\Project\Data\obj\Debug\netstandard2.0\Data.pdb
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Data\bin\Debug\netstandard2.0\Data.deps.json
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Data\bin\Debug\netstandard2.0\Data.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Data\bin\Debug\netstandard2.0\Data.pdb
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Data\obj\Debug\netstandard2.0\Data.csproj.AssemblyReference.cache
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Data\obj\Debug\netstandard2.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Data\obj\Debug\netstandard2.0\Data.AssemblyInfoInputs.cache
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Data\obj\Debug\netstandard2.0\Data.AssemblyInfo.cs
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Data\obj\Debug\netstandard2.0\Data.csproj.CoreCompileInputs.cache
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Data\obj\Debug\netstandard2.0\Data.dll
+C:\Users\Sebastian\Desktop\studia\programowanie_wspolbiezne\Programowanie_wspolbiezne_MR_SZ\Project\Project\Data\obj\Debug\netstandard2.0\Data.pdb

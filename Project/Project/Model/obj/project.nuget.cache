@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "sbnJ+Lt9mSAo7A72shjW1ezy/I1bGOWUGBdZGpwnAsFSx8ifNrC7FTpbmBu7Orpawt1CNiJr9kpRVaMVpdND8w==",
+  "dgSpecHash": "q9tu4e4T8I+EoMJxFMc23p0IILHrtvQnSf89Yz/5Y+2JSZnHnnhLv8DfUILcMKUb9VhuXjgiMf/7g8mxmxoXJQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Maciek\\Desktop\\Studia\\semestr 4\\wspolbiezne\\repo\\Programowanie_wspolbiezne_MR_SZ\\Project\\Project\\Model\\Model.csproj",
+  "projectFilePath": "C:\\Users\\Sebastian\\Desktop\\studia\\programowanie_wspolbiezne\\Programowanie_wspolbiezne_MR_SZ\\Project\\Project\\Model\\Model.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Maciek\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Maciek\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\Sebastian\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Sebastian\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

@@ -15,10 +15,7 @@
         </Border>
         <TextBox HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,28,0,0" TextWrapping="Wrap" Text="{Binding BallVal}"  VerticalAlignment="Top" Width="200" Height="80" TextAlignment="Center" FontSize="40" BorderBrush="#375573" BorderThickness="5,5,5,5" />
         <Button Margin="50,28,530,476" Content="ADD" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding AddCommand}" ></Button>
-<<<<<<< HEAD
-        <Button x:Name= "StopButton" Margin="530,28,50,476" Content="STOP" BorderThickness="5,5,5,5" BorderBrush="Black" FontSize="40" Command="{Binding StopCommand}"></Button>
-=======
-        <Button x:Name= "StopButton" Margin="530,28,50,476" Content="PAUSE" BorderThickness="5,5,5,5" BorderBrush="Black" FontSize="40" Command="{Binding StopCommand}"></Button>
->>>>>>> ab571a18d7a7fbadca7956999d5790e4e4ca6627
+        <Button x:Name= "StopButton" Margin="530,28,50,476" Content="STOP" BorderThickness="5,5,5,5" BorderBrush="Black" FontSize="40" Command="{Binding StopCommand}">
+        </Button>
     </Grid>
 </Window>
