@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "Luj8PxtKwwwO9Ag5KWQnRe2/tX/pgCPkq/WaW/CXv8hHZV/upSogikT6sMnhe+xe4dppmBtlIqG1ZAaWkSJTmQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Maciek\\Desktop\\Studia\\semestr 4\\wspolbiezne\\repo\\Programowanie_wspolbiezne_MR_SZ\\Project\\Project\\ViewModel\\ViewModel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Maciek\\.nuget\\packages\\extended.wpf.toolkit\\4.3.0\\extended.wpf.toolkit.4.3.0.nupkg.sha512",
+    "C:\\Users\\Maciek\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Maciek\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Pakiet „Extended.Wpf.Toolkit 4.3.0” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „.NETStandard,Version=v2.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "libraryId": "Extended.Wpf.Toolkit",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}

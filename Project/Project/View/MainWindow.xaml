@@ -3,10 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="600" Width="800" Background="#3385b5" Foreground="Black" BorderBrush="Black">
 
+
+    <Grid>
+        <ContentPresenter Content="{Binding Canvas}"/>
+        <Border BorderBrush="#375573" BorderThickness="5,5,5,5" Height="400" Width="700" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,134,0,0">
+        </Border>
+        <TextBox HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,28,0,0" TextWrapping="Wrap" Text="{Binding BallVal}"  VerticalAlignment="Top" Width="200" Height="80" TextAlignment="Center" FontSize="40" BorderBrush="#375573" BorderThickness="5,5,5,5" />
+        <Button Margin="50,28,530,476" Content="ADD" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding AddCommand}" ></Button>
+        <Button x:Name= "StopButton" Margin="530,28,50,476" Content="STOP" BorderThickness="5,5,5,5" BorderBrush="Black" FontSize="40" Command="{Binding StopCommand}"></Button>
     </Grid>
 </Window>

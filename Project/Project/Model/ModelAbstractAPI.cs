@@ -42,9 +42,10 @@ namespace Model
             Canvas = new Canvas();
             Canvas.HorizontalAlignment = HorizontalAlignment.Center;
             Canvas.VerticalAlignment = VerticalAlignment.Top;
+            Canvas.Margin = new Thickness(0, 134, 0, 0);
             Canvas.Width = width;
             Canvas.Height = height;
-            Canvas.Background = new SolidColorBrush(Color.FromRgb(241, 237, 237));
+            Canvas.Background = new SolidColorBrush(Color.FromRgb(245, 250, 205));
             LogicLayer.Update += (sender, args) => Move();
         }
         public override void CreateEllipses(int ballVal)

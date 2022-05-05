@@ -90,7 +90,7 @@ namespace Logic
         {
             foreach(Ball ball in Balls)
             {
-                ball.positioning(600, 480);
+                ball.positioning(700, 400);
             }
         }
         public override void Start()
