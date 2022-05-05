@@ -14,7 +14,7 @@ namespace ViewModel
         public MainWindowViewModel()
         {
 
-            ModelLayer = ModelAbstractAPI.CreateApi(600, 480);
+            ModelLayer = ModelAbstractAPI.CreateApi(700, 400);
             StopCommand = new RelayCommand(Stop);
             AddCommand = new RelayCommand(CreateEllipses);
 

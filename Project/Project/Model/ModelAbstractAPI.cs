@@ -44,7 +44,8 @@ namespace Model
             Canvas.VerticalAlignment = VerticalAlignment.Top;
             Canvas.Width = width;
             Canvas.Height = height;
-            Canvas.Background = new SolidColorBrush(Color.FromRgb(241, 237, 237));
+            Canvas.Margin = new Thickness(0, 134, 0, 0);
+            Canvas.Background = new SolidColorBrush(Color.FromRgb(245, 250, 245));
             LogicLayer.Update += (sender, args) => Move();
         }
         public override void CreateEllipses(int ballVal)
