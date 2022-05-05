@@ -2,7 +2,15 @@
 
 namespace Data
 {
-    public class Class1
+    public abstract class DataAPI
+    {
+        public static DataAPI CreateApi()
+        {
+            return new DataAPIBase();
+        }
+    }
+
+    internal class DataAPIBase : DataAPI
     {
 
     }
