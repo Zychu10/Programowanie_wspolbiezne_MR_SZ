@@ -22,8 +22,8 @@ namespace ViewModel
         { get; set; }
         public MainWindowViewModel()
         {
-            width = 700;
-            height = 400;
+            width = 400;
+            height = 550;
             ModelLayer = ModelAbstractApi.CreateApi(width, height);
             StopCommand = new RelayCommand(Stop);
             AddCommand = new RelayCommand(AddBalls);

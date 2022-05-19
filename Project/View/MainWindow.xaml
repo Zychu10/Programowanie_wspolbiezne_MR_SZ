@@ -6,29 +6,37 @@
         xmlns:vm="clr-namespace:ViewModel;assembly=ViewModel"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800" Background="#3385b5" Foreground="Black" BorderBrush="Black">
+        Title="MainWindow" Height="703" Width="700" Background="#3385b5" Foreground="Black" BorderBrush="Black">
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
 
-    <Grid>
-        <Canvas Width="700" Height="400" VerticalAlignment="Top" HorizontalAlignment="Center" Background="#F5FACD" Margin="0, 134, 0, 0">
+    <Grid Margin="0,0,0,-6">
+        <Canvas Width="400" Height="550" VerticalAlignment="Center" HorizontalAlignment="Left" Background="#F5FACD" Margin="267,0,0,0">
             <ItemsControl Name="Balls" ItemsSource="{Binding Balls}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Canvas>
-                            <Ellipse Stroke="Black" Fill="#7310de"  Width="{Binding Size}" Height="{Binding Size}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}"/>
+                            <Ellipse Stroke="Black" Fill="Black"  Width="{Binding Size}" Height="{Binding Size}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}"/>
                         </Canvas>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-            <Border BorderBrush="#375573" BorderThickness="5,5,5,5" Height="400" Width="700" HorizontalAlignment="Center" VerticalAlignment="Top" >
+            <Border BorderBrush="#375573" BorderThickness="5,5,5,5" Height="404" Width="556" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Canvas.Left="-77" Canvas.Top="71" >
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Border.RenderTransform>
             </Border>
         </Canvas>
-        <TextBox HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,28,0,0" TextWrapping="Wrap" Text="{Binding BallVal}"  VerticalAlignment="Top" Width="200" Height="50" TextAlignment="Center" FontSize="30" BorderBrush="#375573" BorderThickness="5,5,5,5" />
-        <Button Margin="50,28,530,476" Content="Start" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding StartCommand}" IsEnabled="{Binding isRunEnabled}" ></Button>
-        <Button x:Name= "StopButton" Margin="530,28,50,476" Content="Stop" BorderThickness="5,5,5,5" BorderBrush="Black" FontSize="40" Command="{Binding StopCommand}"></Button>
-        <Button x:Name= "AddButton" Width="200" Height="30" Margin="250,-365,250,10" Content="Add" FontSize="20" Command="{Binding AddCommand}" IsEnabled="{Binding isAddEnabled}"></Button>
-       
+        <TextBox HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="32,236,0,0" TextWrapping="Wrap" Text="{Binding BallVal}"  VerticalAlignment="Top" Width="198" Height="88" TextAlignment="Center" FontSize="40" BorderBrush="#375573" BorderThickness="5,5,5,5" />
+        <Button Margin="32,59,470,496" Content="ADD" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding AddCommand}" ></Button>
+        <Button x:Name= "StopButton" Margin="32,483,470,71" Content="STOP" BorderThickness="5,5,5,5" BorderBrush="Black" FontSize="40" Command="{Binding StopCommand}"></Button>
+        <Button Margin="32,359,470,248" Content="Start" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding StartCommand}" IsEnabled="{Binding isRunEnabled}" ></Button>
+
     </Grid>
 </Window>
