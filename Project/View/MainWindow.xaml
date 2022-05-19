@@ -12,9 +12,19 @@
     </Window.DataContext>
 
     <Grid>
-        <ContentPresenter Content="{Binding Canvas}"/>
-        <Border BorderBrush="#375573" BorderThickness="5,5,5,5" Height="400" Width="700" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,134,0,0">
-        </Border>
+        <Canvas Width="700" Height="400" VerticalAlignment="Top" HorizontalAlignment="Center" Background="#F5FACD" Margin="0, 134, 0, 0">
+            <ItemsControl Name="Balls" ItemsSource="{Binding Balls}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Canvas>
+                            <Ellipse Stroke="Black" Fill="Black"  Width="{Binding Size}" Height="{Binding Size}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}"/>
+                        </Canvas>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <Border BorderBrush="#375573" BorderThickness="5,5,5,5" Height="400" Width="700" HorizontalAlignment="Center" VerticalAlignment="Top" >
+            </Border>
+        </Canvas>
         <TextBox HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,28,0,0" TextWrapping="Wrap" Text="{Binding BallVal}"  VerticalAlignment="Top" Width="200" Height="80" TextAlignment="Center" FontSize="40" BorderBrush="#375573" BorderThickness="5,5,5,5" />
         <Button Margin="50,28,530,476" Content="ADD" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding AddCommand}" ></Button>
         <Button x:Name= "StopButton" Margin="530,28,50,476" Content="STOP" BorderThickness="5,5,5,5" BorderBrush="Black" FontSize="40" Command="{Binding StopCommand}">
