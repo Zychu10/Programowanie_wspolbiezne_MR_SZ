@@ -17,7 +17,7 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Canvas>
-                            <Ellipse Stroke="Black" Fill="Black"  Width="{Binding Size}" Height="{Binding Size}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}"/>
+                            <Ellipse Stroke="Black" Fill="#7310de"  Width="{Binding Size}" Height="{Binding Size}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}"/>
                         </Canvas>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
@@ -25,9 +25,10 @@
             <Border BorderBrush="#375573" BorderThickness="5,5,5,5" Height="400" Width="700" HorizontalAlignment="Center" VerticalAlignment="Top" >
             </Border>
         </Canvas>
-        <TextBox HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,28,0,0" TextWrapping="Wrap" Text="{Binding BallVal}"  VerticalAlignment="Top" Width="200" Height="80" TextAlignment="Center" FontSize="40" BorderBrush="#375573" BorderThickness="5,5,5,5" />
-        <Button Margin="50,28,530,476" Content="ADD" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding AddCommand}" ></Button>
-        <Button x:Name= "StopButton" Margin="530,28,50,476" Content="STOP" BorderThickness="5,5,5,5" BorderBrush="Black" FontSize="40" Command="{Binding StopCommand}">
-        </Button>
+        <TextBox HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,28,0,0" TextWrapping="Wrap" Text="{Binding BallVal}"  VerticalAlignment="Top" Width="200" Height="50" TextAlignment="Center" FontSize="30" BorderBrush="#375573" BorderThickness="5,5,5,5" />
+        <Button Margin="50,28,530,476" Content="Start" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding RunCommand}" IsEnabled="{Binding isRunEnabled}" ></Button>
+        <Button x:Name= "StopButton" Margin="530,28,50,476" Content="Stop" BorderThickness="5,5,5,5" BorderBrush="Black" FontSize="40" Command="{Binding StopCommand}"></Button>
+        <Button x:Name= "AddButton" Width="200" Height="30" Margin="250,-365,250,10" Content="Add" FontSize="20" Command="{Binding AddCommand}" IsEnabled="{Binding isAddEnabled}"></Button>
+       
     </Grid>
 </Window>

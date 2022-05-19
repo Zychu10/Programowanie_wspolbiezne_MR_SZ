@@ -3,132 +3,153 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-
 namespace Data
+
 {
-   public interface IBall : INotifyPropertyChanged
+    public interface IBall : INotifyPropertyChanged
     {
-        int id { get; }
-        int size { get; }
-        double weight { get; }
-        double x { get; set; }
-        double y { get; set; }
-        double newX{ get; set; }
-        double newY{ get; set; }
+        int ID { get; }
+        int Size { get; }
+        double Weight { get; }
+        double X { get; set; }
+        double Y { get; set; }
+        double NewX { get; set; }
+        double NewY { get; set; }
+
         void Move();
-        void CreateTask(int interval);
+        void CreateMovementTask(int interval);
+
         void Stop();
+
+
+
+
     }
-    
+
     internal class Ball : IBall
     {
-        private readonly int _id;
-        private readonly int _size;
-        private double _x;
-        private double _y;
-        private double _newX;
-        private double _newY;
-        private readonly double _weight;
+        private readonly int size;
+        private readonly int id;
+        private double x;
+        private double y;
+        private double newX;
+        private double newY;
+        private readonly double weight;
         private readonly Stopwatch stopwatch = new Stopwatch();
         private Task task;
-        private bool _stop = false;
+        private bool stop = false;
 
-        public Ball(int id, int size, double x, double y, double newX, double newY, double weight)
+        public Ball(int identyfikator, int size, double x, double y, double newX, double newY, double weight)
         {
-            _id = id;
-            _size = size;
-            _x = x;
-            _y = y;
-            _newX = newX;
-            _newY = newY;
-            _weight = weight;
+            id = identyfikator;
+            this.size = size;
+            this.x = x;
+            this.y = y;
+            this.newX = newX;
+            this.newY = newY;
+            this.weight = weight;
         }
 
-        public int size { get { return _size; } }
-        public int id { get { return _id; } }
-        public double newX
+        public int ID { get => id; }
+        public int Size { get => size; }
+        public double NewX
         {
-            get { return _newX; }
+            get => newX;
             set
             {
-                if (!value.Equals(_newX))
+                if (value.Equals(newX))
                 {
-                    _newX = value;
+                    return;
                 }
-                return;
+
+                newX = value;
+
             }
-            
         }
-        public double newY
+        public double NewY
         {
-            get { return _newY; }
+            get => newY;
             set
             {
-                if (!value.Equals(_newY))
+                if (value.Equals(newY))
                 {
-                    _newY= value;
+                    return;
                 }
-                return;
+
+                newY = value;
+
             }
         }
-        public double x
+        public double X
         {
-            get { return _x; }
+            get => x;
             set
             {
-                if (!value.Equals(_x))
+                if (value.Equals(x))
                 {
-                    _x = value;
-                    RaisePropertyChanged();
+                    return;
                 }
-                return;
+
+                x = value;
+                RaisePropertyChanged();
             }
         }
-        public double y
+        public double Y
         {
-            get { return _y; }
+            get => y;
             set
             {
-                if (!value.Equals(_y))
+                if (value.Equals(y))
                 {
-                    _y = value;
-                    RaisePropertyChanged();
+                    return;
                 }
+
+                y = value;
+                RaisePropertyChanged();
             }
         }
+
         public void Move()
         {
-            x += newX;
-            y += newY;
+            X += NewX;
+            Y += NewY;
         }
-        public double weight { get { return _weight; } }
+
+
+        public double Weight { get => weight; }
+
         public event PropertyChangedEventHandler PropertyChanged;
+
         internal void RaisePropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        public void CreateTask(int interval)
+        public void CreateMovementTask(int interval)
         {
-            task = Go(interval);
-            _stop = false;
+            stop = false;
+            task = Run(interval);
         }
-        private async Task Go(int interval)
+
+        private async Task Run(int interval)
         {
-            while(_stop == false)
+            while (!stop)
             {
                 stopwatch.Reset();
                 stopwatch.Start();
-                if(_stop == false)
+                if (!stop)
                 {
                     Move();
+
                 }
                 stopwatch.Stop();
+
                 await Task.Delay((int)(interval - stopwatch.ElapsedMilliseconds));
             }
         }
         public void Stop()
         {
-            _stop = true;
+            stop = true;
         }
+
     }
 }
