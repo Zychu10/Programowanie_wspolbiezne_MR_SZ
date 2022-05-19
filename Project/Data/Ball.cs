@@ -13,11 +13,11 @@ namespace Data
         double Weight { get; }
         double X { get; set; }
         double Y { get; set; }
-        double NewX { get; set; }
-        double NewY { get; set; }
+        double VelocityX { get; set; }
+        double VelocityY { get; set; }
 
         void Move();
-        void CreateMovementTask(int interval);
+        void MovementTask(int interval);
 
         void Stop();
 
@@ -28,95 +28,95 @@ namespace Data
 
     internal class Ball : IBall
     {
-        private readonly int size;
-        private readonly int id;
-        private double x;
-        private double y;
-        private double newX;
-        private double newY;
-        private readonly double weight;
+        private readonly int _size;
+        private readonly int _id;
+        private double _x;
+        private double _y;
+        private double _velocityX;
+        private double _velocityY;
+        private readonly double _weight;
         private readonly Stopwatch stopwatch = new Stopwatch();
         private Task task;
         private bool stop = false;
 
-        public Ball(int identyfikator, int size, double x, double y, double newX, double newY, double weight)
+        public Ball(int identyfikator, int size, double x, double y, double velocityX, double velocityY, double weight)
         {
-            id = identyfikator;
-            this.size = size;
-            this.x = x;
-            this.y = y;
-            this.newX = newX;
-            this.newY = newY;
-            this.weight = weight;
+            _id = identyfikator;
+            _size = size;
+            _x = x;
+            _y = y;
+            _velocityX = velocityX;
+            _velocityY = velocityY;
+            _weight = weight;
         }
 
-        public int ID { get => id; }
-        public int Size { get => size; }
-        public double NewX
+        public int ID { get => _id; }
+        public int Size { get => _size; }
+        public double VelocityX
         {
-            get => newX;
+            get => _velocityX;
             set
             {
-                if (value.Equals(newX))
+                if (value.Equals(VelocityX))
                 {
                     return;
                 }
 
-                newX = value;
+                _velocityX = value;
 
             }
         }
-        public double NewY
+        public double VelocityY
         {
-            get => newY;
+            get => _velocityY;
             set
             {
-                if (value.Equals(newY))
+                if (value.Equals(_velocityY))
                 {
                     return;
                 }
 
-                newY = value;
+                _velocityY = value;
 
             }
         }
         public double X
         {
-            get => x;
+            get => _x;
             set
             {
-                if (value.Equals(x))
+                if (value.Equals(_x))
                 {
                     return;
                 }
 
-                x = value;
+                _x = value;
                 RaisePropertyChanged();
             }
         }
         public double Y
         {
-            get => y;
+            get => _y;
             set
             {
-                if (value.Equals(y))
+                if (value.Equals(_y))
                 {
                     return;
                 }
 
-                y = value;
+                _y = value;
                 RaisePropertyChanged();
             }
         }
 
         public void Move()
         {
-            X += NewX;
-            Y += NewY;
+            X += VelocityX;
+            Y += VelocityY;
         }
 
 
-        public double Weight { get => weight; }
+        public double Weight { get => _weight; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -124,7 +124,7 @@ namespace Data
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        public void CreateMovementTask(int interval)
+        public void MovementTask(int interval)
         {
             stop = false;
             task = Run(interval);

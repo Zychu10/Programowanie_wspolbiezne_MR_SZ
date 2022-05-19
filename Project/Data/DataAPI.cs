@@ -25,7 +25,7 @@ namespace Data
     internal class DataApi : DataAbstractApi
     {
         private ObservableCollection<IBall> balls { get; }
-        private readonly Mutex mutex = new Mutex();
+        private readonly Mutex _mutex = new Mutex();
 
         private readonly Random random = new Random();
 
@@ -52,17 +52,17 @@ namespace Data
                 int ballsCount = balls.Count;
                 for (int i = 0; i < count; i++)
                 {
-                    mutex.WaitOne();
-                    int radius = random.Next(20, 40);
-                    double weight = radius;
-                    double x = random.Next(radius, Width - radius);
-                    double y = random.Next(radius, Height - radius);
+                    _mutex.WaitOne();
+                    int radius = 35;
+                    double weight = 30;
+                    double x = random.Next(1, Width - radius);
+                    double y = random.Next(1, Height - radius);
                     double newX = random.Next(-10, 10) + random.NextDouble();
                     double newY = random.Next(-10, 10) + random.NextDouble();
                     Ball ball = new Ball(i + 1 + ballsCount, radius, x, y, newX, newY, weight);
 
                     balls.Add(ball);
-                    mutex.ReleaseMutex();
+                    _mutex.ReleaseMutex();
 
                 }
             }
@@ -73,9 +73,9 @@ namespace Data
 
                     if (balls.Count > 0)
                     {
-                        mutex.WaitOne();
+                        _mutex.WaitOne();
                         balls.Remove(balls[balls.Count - 1]);
-                        mutex.ReleaseMutex();
+                        _mutex.ReleaseMutex();
                     };
 
                 }

@@ -17,7 +17,7 @@ namespace ViewModel
         private int size = 0;
         private IList _balls;
         public ICommand AddCommand { get; set; }
-        public ICommand RunCommand { get; set; }
+        public ICommand StartCommand { get; set; }
         public ICommand StopCommand
         { get; set; }
         public MainWindowViewModel()
@@ -27,7 +27,7 @@ namespace ViewModel
             ModelLayer = ModelAbstractApi.CreateApi(width, height);
             StopCommand = new RelayCommand(Stop);
             AddCommand = new RelayCommand(AddBalls);
-            RunCommand = new RelayCommand(Start);
+            StartCommand = new RelayCommand(Start);
 
         }
 

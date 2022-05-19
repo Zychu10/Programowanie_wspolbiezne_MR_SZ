@@ -50,7 +50,7 @@ namespace Logic
         {
             for (int i = 0; i < dataLayer.GetCount; i++)
             {
-                dataLayer.GetBall(i).CreateMovementTask(30);
+                dataLayer.GetBall(i).MovementTask(30);
 
             }
         }
@@ -78,24 +78,24 @@ namespace Logic
             if (ball.X <= 0)
             {
                 ball.X = -ball.X;
-                ball.NewX = -ball.NewX;
+                ball.VelocityX = -ball.VelocityX;
             }
 
             else if (ball.X >= right)
             {
                 ball.X = right - (ball.X - right);
-                ball.NewX = -ball.NewX;
+                ball.VelocityX = -ball.VelocityX;
             }
             if (ball.Y <= 0)
             {
                 ball.Y = -ball.Y;
-                ball.NewY = -ball.NewY;
+                ball.VelocityY = -ball.VelocityY;
             }
 
             else if (ball.Y >= down)
             {
                 ball.Y = down - (ball.Y - down);
-                ball.NewY = -ball.NewY;
+                ball.VelocityY = -ball.VelocityY;
             }
         }
 
@@ -103,34 +103,34 @@ namespace Logic
         {
             for (int i = 0; i < dataLayer.GetCount; i++)
             {
-                IBall secondBall = dataLayer.GetBall(i);
-                if (ball.ID == secondBall.ID)
+                IBall ball2 = dataLayer.GetBall(i);
+                if (ball.ID == ball2.ID)
                 {
                     continue;
                 }
 
-                if (Collision(ball, secondBall))
+                if (Collision(ball, ball2))
                 {
 
-                    double m1 = ball.Weight;
-                    double m2 = secondBall.Weight;
-                    double v1x = ball.NewX;
-                    double v1y = ball.NewY;
-                    double v2x = secondBall.NewX;
-                    double v2y = secondBall.NewY;
+                    double mass1 = ball.Weight;
+                    double mass2 = ball2.Weight;
+                    double velocity1x = ball.VelocityX;
+                    double velocity1y = ball.VelocityY;
+                    double velocity2x = ball2.VelocityX;
+                    double velocity2y = ball2.VelocityY;
 
 
 
-                    double u1x = (m1 - m2) * v1x / (m1 + m2) + (2 * m2) * v2x / (m1 + m2);
-                    double u1y = (m1 - m2) * v1y / (m1 + m2) + (2 * m2) * v2y / (m1 + m2);
+                    double ball1x = (mass1 - mass2) * velocity1x / (mass1 + mass2) + (2 * mass2) * velocity2x / (mass1 + mass2);
+                    double ball1y = (mass1 - mass2) * velocity1y / (mass1 + mass2) + (2 * mass2) * velocity2y / (mass1 + mass2);
 
-                    double u2x = 2 * m1 * v1x / (m1 + m2) + (m2 - m1) * v2x / (m1 + m2);
-                    double u2y = 2 * m1 * v1y / (m1 + m2) + (m2 - m1) * v2y / (m1 + m2);
+                    double ball2x = 2 * mass1 * velocity1x / (mass1 + mass2) + (mass2 - mass1) * velocity2x / (mass1 + mass2);
+                    double ball2y = 2 * mass1 * velocity1y / (mass1 + mass2) + (mass2 - mass1) * velocity2y / (mass1 + mass2);
 
-                    ball.NewX = u1x;
-                    ball.NewY = u1y;
-                    secondBall.NewX = u2x;
-                    secondBall.NewY = u2y;
+                    ball.VelocityX = ball1x;
+                    ball.VelocityY = ball1y;
+                    ball2.VelocityX = ball2x;
+                    ball2.VelocityY = ball2y;
                     return;
 
                 }
@@ -144,22 +144,22 @@ namespace Logic
 
 
 
-        internal bool Collision(IBall a, IBall b)
+        internal bool Collision(IBall ball, IBall ball2)
         {
-            if (a == null || b == null)
+            if (ball == null || ball2 == null)
             {
                 return false;
             }
 
-            return Distance(a, b) <= (a.Size / 2 + b.Size / 2);
+            return Distance(ball, ball2) <= (ball.Size / 2 + ball2.Size / 2);
         }
 
-        internal double Distance(IBall a, IBall b)
+        internal double Distance(IBall ball, IBall ball2)
         {
-            double x1 = a.X + a.Size / 2 + a.NewX;
-            double y1 = a.Y + a.Size / 2 + a.NewY;
-            double x2 = b.X + b.Size / 2 + b.NewY;
-            double y2 = b.Y + b.Size / 2 + b.NewY;
+            double x1 = ball.X + ball.Size / 2 + ball.VelocityX;
+            double y1 = ball.Y + ball.Size / 2 + ball.VelocityY;
+            double x2 = ball2.X + ball2.Size / 2 + ball2.VelocityY;
+            double y2 = ball2.Y + ball2.Size / 2 + ball2.VelocityY;
 
             return Math.Sqrt((Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2)));
         }

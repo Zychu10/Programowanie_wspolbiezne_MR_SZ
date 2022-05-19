@@ -26,7 +26,7 @@
             </Border>
         </Canvas>
         <TextBox HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,28,0,0" TextWrapping="Wrap" Text="{Binding BallVal}"  VerticalAlignment="Top" Width="200" Height="50" TextAlignment="Center" FontSize="30" BorderBrush="#375573" BorderThickness="5,5,5,5" />
-        <Button Margin="50,28,530,476" Content="Start" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding RunCommand}" IsEnabled="{Binding isRunEnabled}" ></Button>
+        <Button Margin="50,28,530,476" Content="Start" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding StartCommand}" IsEnabled="{Binding isRunEnabled}" ></Button>
         <Button x:Name= "StopButton" Margin="530,28,50,476" Content="Stop" BorderThickness="5,5,5,5" BorderBrush="Black" FontSize="40" Command="{Binding StopCommand}"></Button>
         <Button x:Name= "AddButton" Width="200" Height="30" Margin="250,-365,250,10" Content="Add" FontSize="20" Command="{Binding AddCommand}" IsEnabled="{Binding isAddEnabled}"></Button>
        
