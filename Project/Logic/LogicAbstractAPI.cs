@@ -105,10 +105,10 @@ namespace Logic
                     double ball2_v_x = 2 * mass1 * velocity1x / (mass1 + mass2) + (mass2 - mass1) * velocity2x / (mass1 + mass2);
                     double ball2_v_y = 2 * mass1 * velocity1y / (mass1 + mass2) + (mass2 - mass1) * velocity2y/ (mass1 + mass2);
 
-                    ball.newX = velocity1x;
-                    ball.newY = velocity1y;
-                    ball2.newX = velocity2x;
-                    ball2.newY = velocity2y;
+                    ball.newX = ball_v_x;
+                    ball.newY = ball_v_y;
+                    ball2.newX = ball2_v_x;
+                    ball2.newY = ball2_v_y;
                     return;
 
                 }
