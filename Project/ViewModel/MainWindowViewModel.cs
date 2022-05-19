@@ -9,6 +9,8 @@ namespace ViewModel
     {
         private readonly ModelAbstractAPI ModelLayer;
         private int _BallVal;
+        private bool isStartEnabled=false;
+        private bool _isAddEnabled=true;
         public ICommand AddCommand { get; set; }
 
         public MainWindowViewModel()
@@ -35,21 +37,52 @@ namespace ViewModel
             }
         }
 
-        public Canvas Canvas
-        {
-            get => ModelLayer.Canvas;
-
-        }
-
         private void CreateEllipses()
         {
-            ModelLayer.CreateEllipses(BallVal);
+            //ModelLayer.CreateEllipses(BallVal);
         }
         private void Stop()
         {
 
             ModelLayer.Stop();
 
+        }
+
+        public bool isRunEnabled
+        {
+            get { return isStartEnabled; }
+            set
+            {
+                isStartEnabled = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool isAddEnabled
+        {
+            get
+            {
+                return _isAddEnabled;
+            }
+            set
+            {
+                _isAddEnabled = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        private void AddBalls()
+        {
+            if (BallVal > 0)
+            {
+                isRunEnabled = true;
+            }
+            else
+            {
+                isRunEnabled = false;
+            }
+           // Balls = ModelLayer.Start(BallVal);
+            //BallVal = 1;
         }
 
 

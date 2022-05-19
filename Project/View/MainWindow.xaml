@@ -7,9 +7,6 @@
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800" Background="#3385b5" Foreground="Black" BorderBrush="Black">
-    <Window.DataContext>
-        <vm:MainWindowViewModel/>
-    </Window.DataContext>
 
     <Grid>
         <Canvas Width="700" Height="400" VerticalAlignment="Top" HorizontalAlignment="Center" Background="#F5FACD" Margin="0, 134, 0, 0">
