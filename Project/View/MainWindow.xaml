@@ -17,7 +17,7 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Canvas>
-                            <Ellipse Stroke="Black" Fill="Black"  Width="{Binding Size}" Height="{Binding Size}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}"/>
+                            <Ellipse Stroke="Black" Fill="Blue"  Width="{Binding Size}" Height="{Binding Size}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}"/>
                         </Canvas>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
@@ -33,10 +33,10 @@
                 </Border.RenderTransform>
             </Border>
         </Canvas>
-        <TextBox HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="32,236,0,0" TextWrapping="Wrap" Text="{Binding BallVal}"  VerticalAlignment="Top" Width="198" Height="88" TextAlignment="Center" FontSize="40" BorderBrush="#375573" BorderThickness="5,5,5,5" />
-        <Button Margin="32,59,470,496" Content="ADD" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding AddCommand}" ></Button>
-        <Button x:Name= "StopButton" Margin="32,483,470,71" Content="STOP" BorderThickness="5,5,5,5" BorderBrush="Black" FontSize="40" Command="{Binding StopCommand}"></Button>
-        <Button Margin="32,359,470,248" Content="Start" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding StartCommand}" IsEnabled="{Binding isRunEnabled}" ></Button>
+        <TextBox HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="32,231,0,0" TextWrapping="Wrap" Text="{Binding BallVal}"  VerticalAlignment="Top" Width="181" Height="88" TextAlignment="Center" FontSize="40" BorderBrush="#375573" BorderThickness="5,5,5,5" />
+        <Button Margin="32,93,470,462" Content="ADD" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding AddCommand}" IsEnabled="{Binding isAddEnabled}" ></Button>
+        <Button x:Name= "StopButton" Margin="32,429,470,125" Content="STOP" BorderThickness="5,5,5,5" BorderBrush="Black" FontSize="40" Command="{Binding StopCommand}" IsEnabled="{Binding isStopEnabled}" ></Button>
+        <Button Margin="32,338,470,269" Content="Start" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding StartCommand}" IsEnabled="{Binding isRunEnabled}" ></Button>
 
     </Grid>
 </Window>
