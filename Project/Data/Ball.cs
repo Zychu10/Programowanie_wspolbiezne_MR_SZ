@@ -43,8 +43,6 @@ namespace Data
             {
                 NewX = Vx;
                 NewY = Vy;
-
-
             }
         }
 
