@@ -27,6 +27,8 @@ namespace TestData
             Assert.IsTrue(b.Weight == b.Size);
             Assert.IsTrue(b.NewX >= -5 && b.NewX <= 6);
             Assert.IsTrue(b.NewY >= -5 && b.NewY <= 6);
+            Assert.IsTrue(b.NewY >= -5 && b.NewY <= 6);
+
         }
 
         [TestMethod]
