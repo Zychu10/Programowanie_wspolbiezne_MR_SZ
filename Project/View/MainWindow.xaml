@@ -12,7 +12,7 @@
     </Window.DataContext>
 
     <Grid Margin="0,0,0,-6">
-        <Canvas Width="400" Height="550" VerticalAlignment="Center" HorizontalAlignment="Left" Background="#F5FACD" Margin="267,0,0,0">
+        <Canvas Width="{Binding Width}" Height="{Binding Height}" VerticalAlignment="Center" HorizontalAlignment="Left" Background="#F5FACD" Margin="267,0,0,0">
             <ItemsControl Name="Balls" ItemsSource="{Binding Balls}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
@@ -33,10 +33,10 @@
                 </Border.RenderTransform>
             </Border>
         </Canvas>
-        <TextBox HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="32,231,0,0" TextWrapping="Wrap" Text="{Binding BallVal}"  VerticalAlignment="Top" Width="181" Height="88" TextAlignment="Center" FontSize="40" BorderBrush="#375573" BorderThickness="5,5,5,5" />
-        <Button Margin="32,93,470,462" Content="ADD" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding AddCommand}" IsEnabled="{Binding isAddEnabled}" ></Button>
-        <Button x:Name= "StopButton" Margin="32,429,470,125" Content="STOP" BorderThickness="5,5,5,5" BorderBrush="Black" FontSize="40" Command="{Binding StopCommand}" IsEnabled="{Binding isStopEnabled}" ></Button>
-        <Button Margin="32,338,470,269" Content="Start" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding StartCommand}" IsEnabled="{Binding isRunEnabled}" ></Button>
-
+        <TextBox HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="40,208,0,0" TextWrapping="Wrap" Text="{Binding BallVal}"  VerticalAlignment="Top" Width="182" Height="88" TextAlignment="Center" FontSize="40" BorderBrush="#375573" BorderThickness="5,5,5,5" />
+        <Button Margin="32,55,470,500" Content="ADD" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding AddCommand}" IsEnabled="{Binding isAddEnabled}" ></Button>
+        <Button x:Name= "StopButton" Margin="32,519,470,71" Content="STOP" BorderThickness="5,5,5,5" BorderBrush="Black" FontSize="40" Command="{Binding StopCommand}" IsEnabled="{Binding isStopEnabled}" ></Button>
+        <Button Margin="32,416,470,191" Content="Start" FontSize="40" BorderThickness="5,5,5,5" BorderBrush="Black" Command="{Binding RunCommand}" IsEnabled="{Binding isRunEnabled}" ></Button>
+        <Button x:Name= "DeleteButton" Margin="32,312,470,292" Content="Delete" BorderThickness="5,5,5,5" FontSize="40" BorderBrush="Black" Command="{Binding DeleteCommand}" IsEnabled="{Binding isDeleteEnabled}"/>
     </Grid>
 </Window>

@@ -5,7 +5,7 @@ namespace TestData
     [TestClass]
     public class DataCreationTest
     {
-        private DataAbstractApi DApi;
+        /*private DataAbstractApi DApi;
 
 
         [TestMethod]
@@ -83,6 +83,6 @@ namespace TestData
             Assert.AreEqual(4, DApi.GetBall(0).VelocityX);
             Assert.AreEqual(-3, DApi.GetBall(0).VelocityY);
         }
-
+*/
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Concurrent;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
@@ -6,117 +7,131 @@ using System.Threading.Tasks;
 namespace Data
 
 {
-    public interface IBall : INotifyPropertyChanged
-    {
-        int ID { get; }
-        int Size { get; }
-        double Weight { get; }
-        double X { get; set; }
-        double Y { get; set; }
-        double VelocityX { get; set; }
-        double VelocityY { get; set; }
-
-        void Move();
-        void MovementTask(int interval);
-
-        void Stop();
-
-
-
-
-    }
-
     internal class Ball : IBall
     {
-        private readonly int _size;
-        private readonly int _id;
-        private double _x;
-        private double _y;
-        private double _velocityX;
-        private double _velocityY;
-        private readonly double _weight;
-        private readonly Stopwatch stopwatch = new Stopwatch();
-        private Task task;
-        private bool stop = false;
-
-        public Ball(int identyfikator, int size, double x, double y, double velocityX, double velocityY, double weight)
+        private readonly int size;
+        private readonly int id;
+        private double x;
+        private double y;
+        private double newX;
+        private double newY;
+        private readonly double weight;
+        private readonly Stopwatch stopwatch;
+        private bool stop;
+        private readonly object locker = new object();
+        public Ball(int identyfikator, int size, double x, double y, double newX, double newY, double weight)
         {
-            _id = identyfikator;
-            _size = size;
-            _x = x;
-            _y = y;
-            _velocityX = velocityX;
-            _velocityY = velocityY;
-            _weight = weight;
+            id = identyfikator;
+            this.size = size;
+            this.x = x;
+            this.y = y;
+            this.newX = newX;
+            this.newY = newY;
+            this.weight = weight;
+            stop = false;
+            stopwatch = new Stopwatch();
+
         }
 
-        public int ID { get => _id; }
-        public int Size { get => _size; }
-        public double VelocityX
-        {
-            get => _velocityX;
-            set
-            {
-                if (value.Equals(VelocityX))
-                {
-                    return;
-                }
+        public int ID { get => id; }
+        public int Size { get => size; }
+        public double Weight { get => weight; }
 
-                _velocityX = value;
+        public void changeVelocity(double Vx, double Vy)
+        {
+            lock (locker)
+            {
+                NewX = Vx;
+                NewY = Vy;
+
 
             }
         }
-        public double VelocityY
+
+        public double NewX
         {
-            get => _velocityY;
-            set
+            get
             {
-                if (value.Equals(_velocityY))
+                lock (locker) { return newX; }
+            }
+
+            private set
+            {
+                if (value.Equals(newX))
                 {
                     return;
                 }
 
-                _velocityY = value;
+                newX = value;
+            }
+        }
+        public double NewY
+        {
+            get
+            {
+                lock (locker) { return newY; }
+            }
+            private set
+            {
+                if (value.Equals(newY))
+                {
+                    return;
+                }
 
+                newY = value;
             }
         }
         public double X
         {
-            get => _x;
-            set
+            get
             {
-                if (value.Equals(_x))
+                lock (locker) { return x; }
+            }
+            private set
+            {
+                if (value.Equals(x))
                 {
                     return;
                 }
 
-                _x = value;
-                RaisePropertyChanged();
+                x = value;
+
             }
         }
         public double Y
         {
-            get => _y;
-            set
+            get
             {
-                if (value.Equals(_y))
+                lock (locker) { return y; }
+            }
+            private set
+            {
+                if (value.Equals(y))
                 {
                     return;
                 }
 
-                _y = value;
-                RaisePropertyChanged();
+                y = value;
+
             }
         }
 
-        public void Move()
+
+        public void SaveRequest(ConcurrentQueue<IBall> queue)
         {
-            X += VelocityX;
-            Y += VelocityY;
+            queue.Enqueue(new Ball(ID, Size, X, Y, NewX, NewY, Weight));
         }
-
-
-        public double Weight { get => _weight; }
+        public void Move(double time, ConcurrentQueue<IBall> queue)
+        {
+            lock (locker)
+            {
+                X += NewX * time;
+                Y += NewY * time;
+                RaisePropertyChanged(nameof(X));
+                RaisePropertyChanged(nameof(Y));
+                SaveRequest(queue);
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -124,13 +139,13 @@ namespace Data
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        public void MovementTask(int interval)
+        public Task CreateMovementTask(int interval, ConcurrentQueue<IBall> queue)
         {
             stop = false;
-            task = Run(interval);
+            return Run(interval, queue);
         }
 
-        private async Task Run(int interval)
+        private async Task Run(int interval, ConcurrentQueue<IBall> queue)
         {
             while (!stop)
             {
@@ -138,8 +153,7 @@ namespace Data
                 stopwatch.Start();
                 if (!stop)
                 {
-                    Move();
-
+                    Move(((interval - stopwatch.ElapsedMilliseconds) / 16), queue);
                 }
                 stopwatch.Stop();
 
@@ -153,3 +167,4 @@ namespace Data
 
     }
 }
+

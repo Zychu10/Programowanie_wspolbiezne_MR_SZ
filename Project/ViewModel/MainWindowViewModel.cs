@@ -14,12 +14,14 @@ namespace ViewModel
         private bool _isStopEnabled = false;
         private bool isStartEnabled = false;
         private bool _isAddEnabled = true;
+        private bool _isDeleteEnabled = false;
         private int size = 0;
         private IList _balls;
-        public ICommand AddCommand { get; set; }
-        public ICommand StartCommand { get; set; }
+        public ICommand AddCommand { get; }
+        public ICommand RunCommand { get; }
         public ICommand StopCommand
-        { get; set; }
+        { get; }
+        public ICommand DeleteCommand { get; }
         public MainWindowViewModel()
         {
             width = 400;
@@ -27,7 +29,8 @@ namespace ViewModel
             ModelLayer = ModelAbstractApi.CreateApi(width, height);
             StopCommand = new RelayCommand(Stop);
             AddCommand = new RelayCommand(AddBalls);
-            StartCommand = new RelayCommand(Start);
+            RunCommand = new RelayCommand(Start);
+            DeleteCommand = new RelayCommand(DeleteBalls);
 
         }
 
@@ -60,6 +63,19 @@ namespace ViewModel
             set
             {
                 _isAddEnabled = value;
+
+                RaisePropertyChanged();
+            }
+        }
+        public bool isDeleteEnabled
+        {
+            get
+            {
+                return _isDeleteEnabled;
+            }
+            set
+            {
+                _isDeleteEnabled = value;
 
                 RaisePropertyChanged();
             }
@@ -115,25 +131,66 @@ namespace ViewModel
         private void AddBalls()
         {
             size += BallVal;
-            if (size > 0)
+            if (size > 0 && size <= 25)
             {
                 isRunEnabled = true;
+                isDeleteEnabled = true;
+                Balls = ModelLayer.Create(BallVal);
+                BallVal = 1;
             }
-            else
+
+            if (size <= 0)
             {
                 size = 0;
                 isRunEnabled = false;
+                isDeleteEnabled = false;
+                BallVal = 1;
             }
-            Balls = ModelLayer.Start(BallVal);
-            BallVal = 1;
 
+
+            if (size == 25)
+            {
+                isAddEnabled = false;
+                BallVal = 1;
+            }
+            if (size > 25)
+            {
+                size -= BallVal;
+                BallVal = 25 - size;
+            }
 
         }
+
+
+        private void DeleteBalls()
+        {
+            size -= BallVal;
+            Balls = ModelLayer.Delete(BallVal);
+            if (size >= 0 && size <= 25)
+            {
+                isRunEnabled = true;
+                isAddEnabled = true;
+
+            }
+
+            if (size <= 0)
+            {
+                size = 0;
+                isAddEnabled = true;
+                isRunEnabled = false;
+                isDeleteEnabled = false;
+            }
+
+            BallVal = 1;
+
+        }
+
         private void Stop()
         {
             isStopEnabled = false;
             isAddEnabled = true;
             isRunEnabled = true;
+            isDeleteEnabled = true;
             ModelLayer.Stop();
         }
         private void Start()
@@ -141,6 +198,7 @@ namespace ViewModel
             isStopEnabled = true;
             isRunEnabled = false;
             isAddEnabled = false;
+            isDeleteEnabled = false;
             ModelLayer.StartMoving();
         }
         public IList Balls
